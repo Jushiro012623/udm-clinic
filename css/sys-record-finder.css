@@ -1,0 +1,137 @@
+.finder{
+	grid-column-start:2;
+	grid-column-end:3;
+	grid-row-start:2;
+	grid-row-end:3;
+	
+	background: linear-gradient(180deg, #41a8b1 -10.1%, #75c5cc 87.73%);
+	display:grid;
+	grid-gap:15px;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr .5fr;
+	
+	align-items:center;
+	padding-left:3%;
+	padding-right:3%;
+	
+}
+.dropbox, .inputbox{ /*box*/
+	position: relative;
+	display: flex;
+	height: 2.6em;
+	background: #fff;
+	overflow: hidden;
+	border-radius: 10px;
+	line-height:3.3;
+}
+.dropbox::after { /*Icon down triangle*/
+	content: '\25BC';
+	font-size: 12px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding-right:10px;
+	cursor: pointer;
+	pointer-events: none;
+	-webkit-transition: .25s all ease;
+	-o-transition: .25s all ease;
+	transition: .25s all ease;
+}
+/* Transition */
+.dropbox:hover::after {
+	color: #f39c12;
+}
+
+
+.selection1,.age-selection, .illness-selection, .year-selection, .employee-selection, .college-selection{ /*select style*/
+	outline:none;
+	border:0;
+	background: #fff;
+	background-image:none;
+	appearance:none;
+}
+.selection1,.age-selection, .illness-selection, .year-selection, .employee-selection , .college-selection::-ms-expand { /*remove dropdown icon*/
+	display: none;
+}
+
+.selection1, .age-selection, .illness-selection, .year-selection, .employee-selection, .college-selection{/*text styke select*/
+	flex: 1;
+	padding: 1em;
+	color: #000;
+	cursor: pointer;
+}
+::placeholder{
+	color:#000;
+}
+/*grid assigning*/
+#options{
+	grid-column-start:1;
+	grid-column-end:2;
+	grid-row-start:1;
+	grid-row-end:2;
+}
+#college-drpdwn{
+	display:none;
+	
+	grid-column-start:2;
+	grid-column-end:3;
+	grid-row-start:1;
+	grid-row-end:2;
+}
+#employee-drpdwn{
+	display:none;
+	
+	grid-column-start:2;
+	grid-column-end:3;
+	grid-row-start:1;
+	grid-row-end:2;
+}
+
+#age-drpdwn{
+	display:none;
+	
+	grid-column-start:2;
+	grid-column-end:3;
+	grid-row-start:1;
+	grid-row-end:2;
+}
+
+#illness-drpdwn{
+	display:none;
+	
+	grid-column-start:2;
+	grid-column-end:3;
+	grid-row-start:1;
+	grid-row-end:2;
+}
+
+#year-drpdwn{
+	display:none;
+	
+	grid-column-start:2;
+	grid-column-end:3;
+	grid-row-start:1;
+	grid-row-end:2;
+}
+
+.submit{
+	grid-column-start:6;
+	grid-column-end:7;
+	grid-row-start:1;
+	grid-row-end:2;
+	
+	border:none;
+	cursor:pointer;
+	position: relative;
+	display: flex;
+	height: 2.6em;
+	background: #fff;
+	overflow: hidden;
+	border-radius: 20px;
+	align-items:center;
+	justify-content:center;
+}
+
+.age-selection input[type=number]::-webkit-inner-spin-button {
+    opacity: 1
+}
+/*end of age selection*/

@@ -1,0 +1,304 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>RECORD</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="icons/css/all.css">
+	<link rel="stylesheet" type="text/css" href="records.css">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+	<!--<link rel="stylesheet" type="text/css" href="css/record-finder.css">-->
+</head>
+<body>
+	<div class="container">
+		<nav class="navigation">
+			<div class="logo">LOGO</div>
+			<ul class="tabs"> 
+				<a href="home-admin.php"><li><i class="fa fa-home"></i>HOME</li></a>
+				<a href="profile.php"><li><i class="fa fa-user"></i>PROFILE</li></a>
+				<a href="records.php"><li id="active"><i class="fas fa-file-medical"></i>RECORDS</li></a>
+				<a href="settings.php"><li><i class="fa fa-cog"></i>SETTINGS</li></a>
+				<a href="index.php"><li><i class="fas fa-sign-out-alt"></i>LOG OUT</li></a>
+			</ul>
+		</nav>
+		<div class="header" id="fff" >
+			<h2>Dashboard</h2>
+			<div class="user-icons">
+				<span>Ivan Macabontoc</span>
+			</div>
+			
+		</div>
+		<div class="finder" id="fff">		
+			<div class="searchbar-div">
+				<input type="text" placeholder="Search.." class="searchbar">
+				<button type="submit" class="searchbttn" id="search-bttn"><i class="fa fa-search"></i></button>
+			</div>
+			<button type="button" class="addrecord" id="addbttn">ADD RECORD</button>
+			<!-- <div class="dropbox" id="options">
+				<select name="first-selection" class="selection1" onchange="hiden(this)">
+					<option selected disabled>Choose an option</option>
+					<option value="1">College</option>
+					<option value="2">Employee</option>
+					<option value="3">Age</option>
+					<option value="4">Illness</option>
+					<option value="5">Year</option>
+				</select>
+			</div>
+			Selection for college*
+			<div class="dropbox" id="college-drpdwn"> 
+				<select name="colleges" class="college-selection" >
+					<option selected disabled >Choose an option</option>
+					<option value="1">CET</option>
+					<option value="2">CBA</option>
+					<option value="3">CC</option>
+				</select>
+			</div>
+			END Selection for college*
+			
+			Selection for emplyee*
+			<div class="dropbox" id="employee-drpdwn"> 
+				<select name="employee" class="employee-selection" >
+					<option selected disabled >Choose an option</option>
+					<option value="1">Nurse</option>
+					<option value="2">Doctor</option>
+					<option value="3">Janitor</option>
+				</select>
+			</div>
+			END Selection for emplyee*
+			
+			Selection for Illness
+			<div class="inputbox" id="illness-drpdwn"> 
+				<input id="illness" name="illness"  type="text" placeholder="Input Illness"  class="illness-selection" >
+			</div>
+			END Selection for Illness*
+			
+			
+			Selection for age*
+			<div class="inputbox" id="age-drpdwn"> 
+				<input name="age"   type="number" min="1" max="200" placeholder="Input Age" class="age-selection"  >
+			</div>
+			END Selection for age*
+			
+			Selection for Year
+			<div class="inputbox" id="year-drpdwn"> 
+				<input name="year"   type="number" min="1" max="2021" placeholder="Input Year" class="year-selection"  >
+			</div>
+			END Selection for year*
+			
+			<button type="button" class="submit" onclick="colors" id="submition">Submit</button> -->
+		</div>
+		<div class="content" id="fff">
+			<div class="record">
+				<span> RECORDS </span>
+			</div>
+			<!-- <div class="table">
+			
+						<table border="2">
+						<?php
+						while ($row = mysqli_fetch_assoc($result)){
+							
+							echo    "<tr>";
+							echo		"<td>".$row['student_no']."</td>";
+							echo		"<td>".$row['full_name']."</td>";
+							echo		"<td>".$row['age']."</td>";
+							echo		"<td>".$row["illness_desc"]."</td>";
+							echo		"<td>".$row["attending_physician"]."</td>";
+							echo		"<td>".$row["date_consulted"]."</td>";
+							echo		"<td>".$row["diagnosis"]."</td>";
+							echo		"<td>".$row["semester"]."</td>";
+							echo		"</tr>";
+						
+							}
+						?>
+						</table>
+						<?php
+							$pr_query = "SELECT * FROM records_vw";
+							$pr_result = mysqli_query($conn,$pr_query);
+							$total_record = mysqli_num_rows($pr_result);
+							$total_page = ceil($total_record/$num_per_page);
+								
+							for($i=1;$i<$total_page+1;$i++)
+							{
+								echo "<a href='records.php?page=".$i."'>$i</a>";
+							}
+
+							?>
+			</div> -->
+			<!-- The Modal -->
+			<div id="modal-opener" class="modal">
+
+				<!-- Modal content -->
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4>Add Record</h4>
+						<span class="close">&times;</span>
+						
+						
+					</div>
+					<div class="modal-body">
+							<div class="information-fillup" id="modal-fielset-div">
+								<fieldset class="personal-info-fillup" id="modal-fieldset">
+									<legend>Personal Information</legend>
+									<div class="modal-addrecord-info" id="studnum-info">
+										<label id="studnum-modal-input">Student Number <span>*</span> </label>
+										<input class="modal-fillup" type="text" id="studnum-input" name="user_studnum" required placeholder="xx-xx-xxx">
+									</div>
+									<div class="modal-addrecord-info" id="lname-info">
+										<label id="lname-modal-input">Last Name <span>*</span> </label>
+										<input class="modal-fillup" type="text" id="lname-input" name="user_lname" required placeholder="xxxx-xxxxx">
+									</div>
+									<div class="modal-addrecord-info" id="fname-info">
+										<label id="fname-modal-input">First Name <span>*</span> </label>
+										<input class="modal-fillup" type="text" id="fname-input" name="user_fname" required placeholder="xxxxx-xxxxx">
+									</div>
+									<div class="modal-addrecord-info" id="email-info">
+										<label id="email-modal-input">Email Address <span>*</span> </label>
+										<input class="modal-fillup" type="text" id="email-input" name="user_email" required placeholder="xxxxxxx@xxx.xxx">
+									</div>
+									<div class="modal-addrecord-info" id="bday-info">
+										<label id="bday-modal-input">Birthday <span>*</span> </label>
+										<input class="modal-fillup" type="date" id="bday-input" name="user_bday" required placeholder="xx-xx-xxxx">
+									</div>
+									<div class="modal-addrecord-info" id="gender-info">
+										<label id="gender-modal-input">Gender <span>*</span> </label>
+										<select name="user_gender" class="modal-fillup" required>
+											<option value="" disabled selected >Choose an option</option>
+											<option value="1">Male</option>
+											<option value="2">Female</option>
+										</select>
+									</div>
+									<div class="modal-addrecord-info" id="collegecode-info">
+										<label id="collegecode-modal-input">College Code <span>*</span> </label>
+										<select name="user_collegecode" class="modal-fillup" required>
+											<option value="" disabled selected id="choose" >Choose an option</option>
+											<option value="1">First</option>
+											<option value="2">Second</option>
+											<option value="3">Third</option>
+										</select>
+									</div>
+									<div class="modal-addrecord-info" id="coursecode-info">
+										<label id="coursecode-modal-input">Course Code <span>*</span> </label>
+										<select name="user_coursecode" class="modal-fillup" required>
+											<option value="" disabled selected id="choose" >Choose an option</option>
+											<option value="1">First</option>
+											<option value="2">Second</option>
+											<option value="3">Third</option>
+										</select>
+									</div>
+									<div class="modal-addrecord-info" id="blockno-info">
+										<label id="blockno-modal-input">Block No <span>*</span> </label>
+										<input class="modal-fillup" type="text" id="blockno-input" name="user_blockno" required placeholder="xxxx">
+									</div>
+									<div class="modal-addrecord-info" id="illnesscode-info">
+										<label id="illnesscode-modal-input">Illness Code <span>*</span> </label>
+										<select name="user_illnesscode" class="modal-fillup" required>
+											<option value="" disabled selected id="choose" >Choose an option</option>
+											<option value="1">First</option>
+											<option value="2">Second</option>
+											<option value="3">Third</option>
+										</select>
+									</div>
+									<div class="modal-addrecord-info" id="schoolyear-info">
+										<label id="schoolyear-modal-input">School Year <span>*</span> </label>
+										<input class="modal-fillup" type="text" id="schoolyear-input" name="user_schoolyear" required placeholder="xxxx-xxxx">
+									</div>
+									
+									<div class="modal-addrecord-info" id="semester-info">
+										<label id="semester-modal-input">Semester <span>*</span> </label>
+										<select name="user_semester" class="modal-fillup" required >
+											<option value="" disabled selected id="choose">Choose an option</option>
+											<option value="1">First</option>
+											<option value="2">Second</option>
+											<option value="3">Third</option>
+										</select>
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="buttonmodal" id="savebttn">Add Record</button>
+									</div>
+									
+								</fieldset>
+							</div>
+					</div>
+
+				</div>
+			</div>
+
+
+		</div>
+		
+	</div>
+	<footer>
+		<p>Copyright &copy; <script>document.write(new Date().getFullYear());</script>,
+		Universidad De Manila, Philippines</p>
+	</footer>
+<script>
+	var modal = document.getElementById("modal-opener");
+	var btn = document.getElementById("addbttn");
+
+	var span = document.getElementsByClassName("close")[0];
+
+	// opener onlcik
+	btn.onclick = function() {
+		modal.style.display = "flex";
+	}
+
+	// closer (x)
+	span.onclick = function() {
+		modal.style.display = "none";
+	}
+
+	// close when tap outside
+	window.onclick = function(event) {
+		if (event.target == modal) {
+			modal.style.display = "none";
+		}
+	}
+/*	
+	function hiden(a) {
+		var x = (a.value || a.options[a.selectedIndex].value);	
+		
+		if(x == 1){ // hide all execpt college
+			document.getElementById('college-drpdwn').style.display = "flex";
+			document.getElementById('employee-drpdwn').style.display = "none";
+			document.getElementById('age-drpdwn').style.display = "none";
+			document.getElementById('illness-drpdwn').style.display = "none";
+			document.getElementById('year-drpdwn').style.display = "none";
+		}
+		else if(x == 2){ // hide all execpt employee
+			document.getElementById('college-drpdwn').style.display = "none";
+			document.getElementById('employee-drpdwn').style.display = "flex";
+			document.getElementById('age-drpdwn').style.display = "none";
+			document.getElementById('illness-drpdwn').style.display = "none";
+			document.getElementById('year-drpdwn').style.display = "none";
+			
+		}
+		else if(x == 3){ // hide all execpt age
+			document.getElementById('college-drpdwn').style.display = "none";
+			document.getElementById('employee-drpdwn').style.display = "none";
+			document.getElementById('age-drpdwn').style.display = "flex";
+			document.getElementById('illness-drpdwn').style.display = "none";
+			document.getElementById('year-drpdwn').style.display = "none";
+			
+		}
+		else if(x == 4){ // hide all execpt illness
+			document.getElementById('college-drpdwn').style.display = "none";
+			document.getElementById('employee-drpdwn').style.display = "none";
+			document.getElementById('age-drpdwn').style.display = "none";
+			document.getElementById('illness-drpdwn').style.display = "flex";
+			document.getElementById('year-drpdwn').style.display = "none";
+			
+		}
+		else if(x == 5){ // hide all execpt year
+			document.getElementById('college-drpdwn').style.display = "none";
+			document.getElementById('employee-drpdwn').style.display = "none";
+			document.getElementById('age-drpdwn').style.display = "none";
+			document.getElementById('illness-drpdwn').style.display = "none";
+			document.getElementById('year-drpdwn').style.display = "flex";
+			
+		}
+	}*/
+</script>
+</body>
+</html>

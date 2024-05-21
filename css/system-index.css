@@ -1,0 +1,162 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap'); */
+* {
+    margin: 0 auto;
+    padding: 0 auto;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-image: url(../img/bg.jpg);
+    /*background-color: #e0f3fd;*/
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow-x: hidden;
+}
+
+section{
+    height: 88vh;
+    width: 100vw;
+}
+
+header {
+  background: #41a8b1;
+  height: 100px;
+  color: #000;
+}
+
+.record{
+    color: black;
+    text-align: center;
+    display: block;
+    background-color: #c2d5ff;
+    max-width: 450px;
+    margin: 0 auto;
+    border-radius: 100px;
+}
+
+.record p {
+    margin: 10px;
+}
+
+header input[type=button]{
+    float: right;
+    border-radius: 50px;
+    margin-right: 30px;
+    margin-top: 35px;
+    width: 90px;
+    height: 40px;
+    background-color: #42a7fa;
+    color: white;
+    border: none;
+    outline: none;
+}
+
+header img{
+	position: absolute;
+	margin-left: 20px;
+	margin-top: 13px;
+	max-height: 80px;
+    max-width: 55rem;
+    pointer-events: none;
+}
+
+.home-page p {
+    color: #8ec8ff;
+    text-align: center;
+    padding: 10px;
+    margin: 20rem;
+}
+
+footer {
+    text-align: center;
+    background-color: #e1e8e9;
+    line-height: 30px;
+    padding: 10px 0px 10px;
+    font-size: .80rem;
+    width: 100%;
+    color: #414141;
+  }
+#bold{
+    color: #41a8b1;
+    font-weight: 900;
+    font-size: 3.5rem;
+}
+
+#you{
+    margin: 11px;
+    line-height: 80px;
+    font-weight: 100;
+    font-size: 2.5rem;
+}
+
+.about {
+    color: black;
+    text-align: right;
+    margin-right: 120px;
+	max-width: 1500px;
+	padding: 50px 0px 0px ;
+}
+
+.login {
+    margin-right: 100px;
+    margin-top: 50px;
+    width: 300px;
+}
+
+.login input{
+    width: 250px;
+    padding: 15px;
+    margin: 5px;
+    border-radius: 50px;
+    outline: none;
+    border: none;
+    background-color: #e9eaeb;
+}
+
+.login .login-button{
+    width: 280px;
+    font-size: 17px;
+    background-color: #41a8b1;
+    color: #fff;
+}
+
+/* ERROR DISPLAY CSS */
+#errorCredentials{
+    background-color: #f35c5c;
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+    width: 280px;
+    margin-right: 20px;
+    border-radius: 5px;
+}
+
+#errorUsername, #errorPassword{
+    background-color: #f35c5c;
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+    width: 90%;
+    border-radius: 5px;
+    margin: 2px;
+}
+
+@media screen and (max-width: 900px){
+    body {
+        background-image: none;
+        background-color: #daeff2;
+    }
+    
+    .about{
+        justify-content: center;
+        text-align: center;
+        left: 100px;
+        width: 100%;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .login{
+        margin: 0 auto;
+    }
+}
